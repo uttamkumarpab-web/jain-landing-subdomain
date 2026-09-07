@@ -20,11 +20,11 @@ export default function ProgrammeFeeSection() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 md:px-14">
         <div>
           <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
-            JAIN Online MBAProgramme fee
+            JAIN Online MBA Fees 2026
           </h2>
           <p className="text-gray-600 mt-3">
-            We offer flexible payment options that allow students to pay their
-            fees in semester-wise instalments.
+            The Jain Online MBA fee structure should be presented clearly so prospective students can understand the total program cost and semester-wise payment options before applying.
+
           </p>
           <div className="flex gap-4 mt-6 max-sm:flex-col">
             {CARDS.map((c) => (

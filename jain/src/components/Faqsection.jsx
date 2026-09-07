@@ -1,103 +1,94 @@
-"use client";
-
-import { useState } from "react";
 import OpenFormButton from "./OpenFormButton";
 
 const FAQS = [
   {
-    question: "1. Are online degrees recognized by UGC?",
+    question: "1. What is JAIN Online MBA?",
     answer:
-      "Yes, the online degree programs from JAIN Online are recognized by the University Grants Commission (UGC). Moreover, our MBA and MCA programs are approved by AICTE.",
+      "JAIN Online MBA is a two-year online postgraduate management program offered by JAIN (Deemed-to-be University). The program is designed to help learners develop management knowledge and industry-relevant skills through online learning, live sessions, recorded content, and digital learning resources.",
   },
   {
-    question: "2. What types of online degree programs are offered by JAIN Online?",
+    question: "2. What is the JAIN Online MBA fee?",
     answer:
-      "JAIN Online offers a variety of online degree programs, including the Online MBA, BBA, BCA, B.Com,MCA and M.Com.",
+      "The JAIN Online MBA fee starts from ₹1,60,000 for the complete two-year program, depending on the selected elective or specialization. The fee can vary across different electives, and applicable registration and examination fees may be charged separately.",
   },
   {
-    question: "3. What is the mode of learning at JAIN Online?",
+    question: "3. What is the eligibility for JAIN Online MBA?",
     answer:
-      "Programs offered by JAIN Online are delivered in online mode with a strong focus on scheduled live sessions that enable real-time interaction with faculty and peers. In addition, learners receive 24×7 access to self-learning resources and pre-recorded lectures through the Learning Management System (LMS), which can be accessed seamlessly across devices.",
+      "Candidates must have a bachelor’s degree of at least three years’ duration from a recognized university with a minimum of 50% marks or equivalent CGPA. Candidates belonging to SC/ST categories require a minimum of 45%. Final-year bachelor’s degree students can also apply.",
   },
   {
-    question: "4. What is the duration of the programs offered by JAIN Online?",
+    question: "4. What are the JAIN Online MBA specializations?",
     answer:
-      "The duration of JAIN Online programs generally ranges from 2 to 4 years, depending on the program and level of study. Most postgraduate programs, such as online MBA programs, are typically completed in 2 years, while undergraduate programs generally have a duration of 3 to 4 years.",
+      "JAIN Online offers 19 MBA electives or specializations, including Finance, Marketing, Human Resource Management, General Management, Finance & Marketing, Finance & Business Analytics, Marketing & Business Analytics, Business Intelligence & Analytics, Data Science & Artificial Intelligence, Digital Marketing & E-Commerce, AI for Finance, AI for Marketing, AI for Human Resources, and others.",
   },
   {
-    question: "5. Whether the degree acquired through distance mode is equivalent to the degree acquired through regular mode?",
+    question: "5. Is JAIN Online MBA recognized?",
     answer:
-      "Yes, the degrees acquired through distance mode from JAIN Online are recognized and considered equivalent to those obtained through regular on-campus programs, as they are awarded by the same university and meet the same academic standards.",
+      "Yes. JAIN Online’s online degree programs are recognized by the University Grants Commission (UGC), while its MBA and MCA programs are approved by AICTE. The degree is awarded by JAIN (Deemed-to-be University).",
   },
 ];
 
-function ChevronIcon({ open }) {
-  return (
-    <svg
-      className={`w-5 h-5 text-gray-700 transition-transform duration-300 ${
-        open ? "rotate-180" : ""
-      }`}
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-    </svg>
-  );
-}
-
 export default function FaqSection() {
-  const [openIndex, setOpenIndex] = useState(null);
-
   return (
     <section className="max-w-7xl mx-auto px-6 lg:px-20 py-16 fa1-main">
       <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-10 items-start">
+        {/* Left Content */}
         <div>
           <h2 className="text-2xl font-poppins lg:text-4xl font-semibold text-gray-900 mb-10">
             Frequently Asked <br className="hidden md:block" />
             Questions
           </h2>
-          <div
-            className="text-white p-8 rounded-lg max-w-md bg-[#194486]">
+
+          <div className="text-white p-8 rounded-lg max-w-md bg-[#194486]">
             <h3 className="text-xl font-semibold mb-2">
               Still having questions? <br />
               Reach out to Us
             </h3>
+
             <p className="text-sm text-gray-100 leading-relaxed mb-6">
-              It is a long established fact that a reader will be distracted by the readable
-              content.
+              It is a long established fact that a reader will be distracted
+              by the readable content.
             </p>
+
             <OpenFormButton className="bg-[#f8b236] text-[#194486] px-5 py-2.5 rounded-lg font-semibold transition hover:opacity-90">
-                          Apply Now
-                        </OpenFormButton>
+              Apply Now
+            </OpenFormButton>
           </div>
         </div>
 
+        {/* FAQ Accordion */}
         <div className="flex flex-col space-y-3 w-full">
-          {FAQS.map((faq, faqIndex) => {
-            const isOpen = openIndex === faqIndex;
-            return (
-              <div
-                key={faq.question}
-                className={`${isOpen ? "bg-rose-100" : "bg-rose-50"} rounded-lg overflow-hidden transition-all`}
-              >
-                <button
-                  type="button"
-                  className="w-full text-left p-4 flex justify-between items-center gap-3 cursor-pointer"
-                  onClick={() => setOpenIndex(isOpen ? null : faqIndex)}
-                  aria-expanded={isOpen}
+          {FAQS.map((faq) => (
+            <details
+              key={faq.question}
+              className="group rounded-lg overflow-hidden bg-rose-50 open:bg-rose-100 transition-all"
+            >
+              <summary className="list-none cursor-pointer p-4 flex justify-between items-center gap-3">
+                <span className="font-semibold text-gray-900">
+                  {faq.question}
+                </span>
+
+                <svg
+                  className="w-5 h-5 shrink-0 text-gray-700 transition-transform duration-300 group-open:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
-                  <span className="font-semibold text-gray-900">{faq.question}</span>
-                  <ChevronIcon open={isOpen} />
-                </button>
-                {isOpen && (
-                  <div className="px-4 pb-4 text-sm text-gray-700 font-semibold">{faq.answer}</div>
-                )}
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+
+              <div className="px-4 pb-4 text-sm text-gray-700 font-semibold leading-relaxed">
+                <p>{faq.answer}</p>
               </div>
-            );
-          })}
+            </details>
+          ))}
         </div>
       </div>
     </section>

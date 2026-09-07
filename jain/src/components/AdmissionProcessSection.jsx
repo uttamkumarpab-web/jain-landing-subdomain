@@ -22,7 +22,7 @@ export default function AdmissionProcessSection() {
     <section className="py-16 px-4 bg-gray-100">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-bold text-center text-gray-800">
-          Admission in 4 simple steps
+          Jain Online MBA Admission 2026
         </h2>
         <div className="mt-8 bg-white flex flex-col md:flex-row gap-6 p-5 rounded-xl shadow">
           {STEPS.map((s) => (

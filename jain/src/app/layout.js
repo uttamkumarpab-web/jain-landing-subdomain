@@ -11,11 +11,28 @@ const poppins = Poppins({
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Jain University Online MBA | Fees & Admission 2026",
+  title: "Jain Online MBA 2026 - Fees, Eligibility & Specializations",
   description:
-    "Get an MBA degree from JAIN Online University. UGC-entitled, globally ranked, with 100% placement assistance. Admissions are closing soon.",
+    "Explore Jain Online MBA 2026 including fees, eligibility, admission process, specializations, syllabus and career support. Check program details and apply online.",
   alternates: {
     canonical: "/",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": `${SITE_URL}/#webpage`,
+  url: SITE_URL,
+  name: "Jain Online MBA 2026 – Fees, Admission, Eligibility & Specializations",
+  description:
+    "Explore Jain Online MBA 2026 including fees, eligibility, admission process, specializations, syllabus and career support.",
+  inLanguage: "en-IN",
+  isPartOf: {
+    "@type": "WebSite",
+    "@id": `${SITE_URL}/#website`,
+    url: SITE_URL,
+    name: "Jain Online MBA",
   },
 };
 
@@ -25,19 +42,15 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.variable} font-poppins text-gray-800 antialiased`}
       >
-        {children}
-
-        {/* Google Ads conversion tags */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17511675640"
-          strategy="afterInteractive"
+          id="website-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
         />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'AW-17511675640');`}
-        </Script>
+
+        {children}
       </body>
     </html>
   );

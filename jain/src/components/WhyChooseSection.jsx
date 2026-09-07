@@ -15,7 +15,7 @@ const REASONS = [
     title: "Experienced Faculty & Industry Experts",
     points: [
       "Learn from experienced faculty through engaging and interactive online learning sessions.",
-      "Benefit from expert guidance and industry insights to develop job-ready skills.",
+      "Benefit from expert guidance and real-world industry insights to develop highly relevant, job-ready skills.",
     ],
   },
   {
@@ -40,9 +40,9 @@ export default function WhyChooseSection() {
             height={60}
             className="mx-auto mb-4"
           />
-          <p className="text-lg text-gray-600">
-            Reasons to pursue Online degree program from Jain Online.
-          </p>
+           <h2 className="text-2xl md:text-3xl font-bold text-gray-800">
+            Why Choose Jain Online MBA?
+          </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {REASONS.map((r, i) => (

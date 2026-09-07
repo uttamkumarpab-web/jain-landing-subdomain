@@ -25,7 +25,7 @@ export default function RankingsSection() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
           <h3 className="text-2xl md:text-3xl font-bold text-gray-800">
-            JAIN Online Rankings & Accreditations
+            JAIN University Rankings & Accreditations
           </h3>
           <p className="text-lg mt-3 text-gray-600">
             How about getting a degree from the top ranked university?
