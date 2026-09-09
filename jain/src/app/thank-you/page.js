@@ -1,5 +1,4 @@
 import Link from "next/link";
-import ConversionTracker from "@/components/ConversionTracker";
 import FooterSection from "@/components/FooterSection";
 import Header from "@/components/Header";
 
@@ -44,7 +43,6 @@ export default function ThankYouPage() {
         </div>
       </main>
       <FooterSection />
-      <ConversionTracker />
     </>
   );
 }
